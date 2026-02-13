@@ -1,8 +1,9 @@
 
 plugins=(git)
 
-eval "$(anyenv init -)"
-eval "$(rbenv init - zsh)"
+autoload -Uz compinit
+compinit
+
 eval "$(fnm env --use-on-cd --shell zsh)"
 eval "$(pyenv init -)"
 eval "$(ssh-agent -s)"
@@ -14,6 +15,7 @@ source $HOME/.zsh/configs/alias.zsh
 source $HOME/.zsh/configs/work.zsh
 source $HOME/.zsh/configs/git.zsh
 source $HOME/.zsh/configs/fzf.zsh
+source $HOME/.zsh/configs/bindkey.zsh
 source $HOME/.bun/_bun
 source $HOME/google-cloud-sdk/path.zsh.inc
 source $HOME/google-cloud-sdk/completion.zsh.inc
